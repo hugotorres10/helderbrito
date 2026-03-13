@@ -30,10 +30,10 @@ export default function Home() {
             <img
               src="/images/helder-profile.jpg"
               alt="Helder Brito"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               style={{ 
-                filter: 'brightness(1.1) contrast(1.2)',
-                objectPosition: 'center'
+                filter: 'brightness(1.05) contrast(1.15)',
+                objectPosition: 'center 20%'
               }}
             />
           </div>
@@ -176,13 +176,14 @@ export default function Home() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="col-span-12 md:col-span-5"
             >
-              <div className="bg-black" style={{ clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}>
+              <div className="bg-black aspect-[3/4] overflow-hidden" style={{ clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}>
                 <img
                   src="/images/helder-profile.jpg"
                   alt="Helder Brito"
-                  className="w-full h-auto"
+                  className="w-full h-full object-cover"
                   style={{ 
-                    filter: 'brightness(1.1) contrast(1.2)'
+                    filter: 'brightness(1.05) contrast(1.15)',
+                    objectPosition: 'center 30%'
                   }}
                 />
               </div>
