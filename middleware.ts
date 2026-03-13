@@ -5,9 +5,9 @@ export default createMiddleware({
   locales,
   defaultLocale: 'pt',
   localeDetection: true,
-  localePrefix: 'as-needed',
+  localePrefix: 'always',
 });
 
 export const config = {
-  matcher: ['/', '/(pt|en|fr|it|de|ar)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ['/', '/(pt|en|fr|it|de|ar)/:path*', '/((?!_next|_vercel|.*\\..*).*)'],
 };

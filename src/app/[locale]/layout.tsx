@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '../../../i18n';
 import '../globals.css';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
