@@ -1,9 +1,11 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { useRef } from 'react';
 
 export default function Home() {
+  const t = useTranslations();
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -46,9 +48,12 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="display-giant mb-6"
           >
-            HELDER
-            <br />
-            BRITO.
+            {t('hero.title').split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i === 0 && <br />}
+              </span>
+            ))}
           </motion.h1>
 
           <motion.p
@@ -57,7 +62,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
             className="mono-small mb-12 opacity-70"
           >
-            Coach. Estrategista. Transformação real.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -66,7 +71,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 1.1 }}
           >
             <a href="#contacto" className="btn-editorial">
-              Começa Agora
+              {t('hero.cta')}
             </a>
           </motion.div>
         </div>
@@ -86,11 +91,11 @@ export default function Home() {
               className="col-span-12 md:col-span-10 md:col-start-2"
             >
               <h2 className="display-large mb-8 leading-tight">
-                "A maioria das pessoas sabe o que quer.
+                "{t('statement.quote')}
                 <br />
-                <span className="opacity-50">Poucos sabem como chegar lá."</span>
+                <span className="opacity-50">{t('statement.quoteFaded')}"</span>
               </h2>
-              <p className="mono-small opacity-50">— Helder Brito</p>
+              <p className="mono-small opacity-50">— {t('statement.author')}</p>
             </motion.div>
           </div>
         </div>
@@ -100,34 +105,18 @@ export default function Home() {
       <section className="section-dark py-40">
         <div className="container-asymmetric">
           <div className="grid-broken gap-16">
-            {[
-              {
-                num: '01',
-                title: 'Clareza',
-                desc: 'Eliminamos o ruído. Defines quem és e para onde vais.',
-              },
-              {
-                num: '02',
-                title: 'Estratégia',
-                desc: 'Um plano real, não motivação vazia.',
-              },
-              {
-                num: '03',
-                title: 'Execução',
-                desc: 'Acompanhamento direto. Resultados mensuráveis.',
-              },
-            ].map((item, i) => (
+            {['clarity', 'strategy', 'execution'].map((key, i) => (
               <motion.div
-                key={i}
+                key={key}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.15 }}
                 className="col-span-12 md:col-span-4 border-t border-white/10 pt-8"
               >
-                <div className="mono-small opacity-30 mb-4">{item.num}</div>
-                <h3 className="display-medium mb-4">{item.title}</h3>
-                <p className="mono-body opacity-70">{item.desc}</p>
+                <div className="mono-small opacity-30 mb-4">{t(`services.${key}.num`)}</div>
+                <h3 className="display-medium mb-4">{t(`services.${key}.title`)}</h3>
+                <p className="mono-body opacity-70">{t(`services.${key}.desc`)}</p>
               </motion.div>
             ))}
           </div>
@@ -144,30 +133,11 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-20"
           >
-            <h2 className="display-medium">Resultados Reais</h2>
+            <h2 className="display-medium">{t('testimonials.title')}</h2>
           </motion.div>
 
           <div className="grid-broken gap-12">
-            {[
-              {
-                quote:
-                  'O Helder mudou completamente a forma como vejo o meu negócio. Em 3 meses, faturação cresceu 180%.',
-                name: 'Ricardo M.',
-                role: 'CEO, Tech Startup',
-              },
-              {
-                quote:
-                  'Finalmente alguém que não vende sonhos. Estratégia clara, execução real.',
-                name: 'Ana P.',
-                role: 'Fundadora, E-commerce',
-              },
-              {
-                quote:
-                  'O melhor investimento que fiz em mim próprio. Foco total, zero fluff.',
-                name: 'João S.',
-                role: 'Freelancer',
-              },
-            ].map((item, i) => (
+            {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 60 }}
@@ -181,12 +151,12 @@ export default function Home() {
               >
                 <div className="accent-line">
                   <p className="mono-body text-[#F5F5F0] mb-8 italic text-lg leading-relaxed">
-                    "{item.quote}"
+                    "{t(`testimonials.items.${i}.quote`)}"
                   </p>
                   <p className="mono-small text-[#F5F5F0]/50">
-                    {item.name}
+                    {t(`testimonials.items.${i}.name`)}
                     <br />
-                    {item.role}
+                    {t(`testimonials.items.${i}.role`)}
                   </p>
                 </div>
               </motion.div>
@@ -225,19 +195,20 @@ export default function Home() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="col-span-12 md:col-span-6 md:col-start-7 accent-line"
             >
-              <p className="mono-small mb-6">SOBRE</p>
+              <p className="mono-small mb-6">{t('about.label')}</p>
               <h2 className="display-medium mb-8">
-                Nasci em Portugal.
-                <br />
-                Vivi em 7 países.
-                <br />
-                Transformei 200+ vidas.
+                {t('about.title').split('\n').map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < 2 && <br />}
+                  </span>
+                ))}
               </h2>
               <p className="mono-body opacity-70 mb-6">
-                Não acredito em fórmulas mágicas. Acredito em clareza, estratégia, e execução sem desculpas.
+                {t('about.p1')}
               </p>
               <p className="mono-body opacity-70">
-                Coaching não é terapia. É guerra. E eu só trabalho com quem quer ganhar.
+                {t('about.p2')}
               </p>
             </motion.div>
           </div>
@@ -255,19 +226,22 @@ export default function Home() {
             className="max-w-3xl"
           >
             <h2 className="display-giant mb-6">
-              PRÓXIMO
-              <br />
-              PASSO.
+              {t('cta.title').split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i === 0 && <br />}
+                </span>
+              ))}
             </h2>
             <p className="mono-body mb-16 opacity-70">
-              Uma conversa. Sem compromisso. Com intenção.
+              {t('cta.subtitle')}
             </p>
 
             <form className="space-y-8">
               <div>
                 <input
                   type="text"
-                  placeholder="O teu nome"
+                  placeholder={t('cta.namePlaceholder')}
                   className="input-editorial"
                   required
                 />
@@ -275,14 +249,14 @@ export default function Home() {
               <div>
                 <input
                   type="email"
-                  placeholder="O teu email"
+                  placeholder={t('cta.emailPlaceholder')}
                   className="input-editorial"
                   required
                 />
               </div>
               <div>
                 <button type="submit" className="btn-editorial">
-                  Entrar em Contacto
+                  {t('cta.button')}
                 </button>
               </div>
             </form>
@@ -293,7 +267,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="section-dark border-t border-white/10 py-8">
         <div className="container-asymmetric flex justify-between items-center">
-          <p className="mono-small opacity-30">© Helder Brito</p>
+          <p className="mono-small opacity-30">{t('footer.copyright')}</p>
           <div className="flex gap-6">
             <a
               href="https://instagram.com/helderbrito_"
@@ -301,7 +275,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="mono-small opacity-50 hover:opacity-100"
             >
-              Instagram
+              {t('footer.instagram')}
             </a>
             <a
               href="https://linkedin.com/in/helderbrito"
@@ -309,7 +283,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="mono-small opacity-50 hover:opacity-100"
             >
-              LinkedIn
+              {t('footer.linkedin')}
             </a>
           </div>
         </div>

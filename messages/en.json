@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "HELDER\nBRITO.",
+    "subtitle": "Coach. Strategist. Real transformation.",
+    "cta": "Start Now"
+  },
+  "statement": {
+    "quote": "Most people know what they want.",
+    "quoteFaded": "Few know how to get there.",
+    "author": "Helder Brito"
+  },
+  "services": {
+    "clarity": {
+      "num": "01",
+      "title": "Clarity",
+      "desc": "We eliminate the noise. You define who you are and where you're going."
+    },
+    "strategy": {
+      "num": "02",
+      "title": "Strategy",
+      "desc": "A real plan, not empty motivation."
+    },
+    "execution": {
+      "num": "03",
+      "title": "Execution",
+      "desc": "Direct follow-up. Measurable results."
+    }
+  },
+  "testimonials": {
+    "title": "Real Results",
+    "items": [
+      {
+        "quote": "Helder completely changed how I see my business. In 3 months, revenue grew 180%.",
+        "name": "Ricardo M.",
+        "role": "CEO, Tech Startup"
+      },
+      {
+        "quote": "Finally someone who doesn't sell dreams. Clear strategy, real execution.",
+        "name": "Ana P.",
+        "role": "Founder, E-commerce"
+      },
+      {
+        "quote": "The best investment I made in myself. Total focus, zero fluff.",
+        "name": "João S.",
+        "role": "Freelancer"
+      }
+    ]
+  },
+  "about": {
+    "label": "ABOUT",
+    "title": "Born in Portugal.\nLived in 7 countries.\nTransformed 200+ lives.",
+    "p1": "I don't believe in magic formulas. I believe in clarity, strategy, and execution without excuses.",
+    "p2": "Coaching isn't therapy. It's war. And I only work with those who want to win."
+  },
+  "cta": {
+    "title": "NEXT\nSTEP.",
+    "subtitle": "One conversation. No commitment. With intention.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "copyright": "© Helder Brito",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  }
+}

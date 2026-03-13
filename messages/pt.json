@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "HELDER\nBRITO.",
+    "subtitle": "Coach. Estrategista. Transformação real.",
+    "cta": "Começa Agora"
+  },
+  "statement": {
+    "quote": "A maioria das pessoas sabe o que quer.",
+    "quoteFaded": "Poucos sabem como chegar lá.",
+    "author": "Helder Brito"
+  },
+  "services": {
+    "clarity": {
+      "num": "01",
+      "title": "Clareza",
+      "desc": "Eliminamos o ruído. Defines quem és e para onde vais."
+    },
+    "strategy": {
+      "num": "02",
+      "title": "Estratégia",
+      "desc": "Um plano real, não motivação vazia."
+    },
+    "execution": {
+      "num": "03",
+      "title": "Execução",
+      "desc": "Acompanhamento direto. Resultados mensuráveis."
+    }
+  },
+  "testimonials": {
+    "title": "Resultados Reais",
+    "items": [
+      {
+        "quote": "O Helder mudou completamente a forma como vejo o meu negócio. Em 3 meses, faturação cresceu 180%.",
+        "name": "Ricardo M.",
+        "role": "CEO, Tech Startup"
+      },
+      {
+        "quote": "Finalmente alguém que não vende sonhos. Estratégia clara, execução real.",
+        "name": "Ana P.",
+        "role": "Fundadora, E-commerce"
+      },
+      {
+        "quote": "O melhor investimento que fiz em mim próprio. Foco total, zero fluff.",
+        "name": "João S.",
+        "role": "Freelancer"
+      }
+    ]
+  },
+  "about": {
+    "label": "SOBRE",
+    "title": "Nasci em Portugal.\nVivi em 7 países.\nTransformei 200+ vidas.",
+    "p1": "Não acredito em fórmulas mágicas. Acredito em clareza, estratégia, e execução sem desculpas.",
+    "p2": "Coaching não é terapia. É guerra. E eu só trabalho com quem quer ganhar."
+  },
+  "cta": {
+    "title": "PRÓXIMO\nPASSO.",
+    "subtitle": "Uma conversa. Sem compromisso. Com intenção.",
+    "namePlaceholder": "O teu nome",
+    "emailPlaceholder": "O teu email",
+    "button": "Entrar em Contacto"
+  },
+  "footer": {
+    "copyright": "© Helder Brito",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "HELDER\nBRITO.",
+    "subtitle": "Coach. Stratège. Transformation réelle.",
+    "cta": "Commencer Maintenant"
+  },
+  "statement": {
+    "quote": "La plupart des gens savent ce qu'ils veulent.",
+    "quoteFaded": "Peu savent comment y arriver.",
+    "author": "Helder Brito"
+  },
+  "services": {
+    "clarity": {
+      "num": "01",
+      "title": "Clarté",
+      "desc": "Nous éliminons le bruit. Vous définissez qui vous êtes et où vous allez."
+    },
+    "strategy": {
+      "num": "02",
+      "title": "Stratégie",
+      "desc": "Un vrai plan, pas de motivation vide."
+    },
+    "execution": {
+      "num": "03",
+      "title": "Exécution",
+      "desc": "Suivi direct. Résultats mesurables."
+    }
+  },
+  "testimonials": {
+    "title": "Résultats Réels",
+    "items": [
+      {
+        "quote": "Helder a complètement changé ma vision de mon entreprise. En 3 mois, le chiffre d'affaires a augmenté de 180%.",
+        "name": "Ricardo M.",
+        "role": "PDG, Startup Tech"
+      },
+      {
+        "quote": "Enfin quelqu'un qui ne vend pas de rêves. Stratégie claire, exécution réelle.",
+        "name": "Ana P.",
+        "role": "Fondatrice, E-commerce"
+      },
+      {
+        "quote": "Le meilleur investissement que j'ai fait en moi-même. Focus total, zéro blabla.",
+        "name": "João S.",
+        "role": "Freelance"
+      }
+    ]
+  },
+  "about": {
+    "label": "À PROPOS",
+    "title": "Né au Portugal.\nVécu dans 7 pays.\nTransformé 200+ vies.",
+    "p1": "Je ne crois pas aux formules magiques. Je crois en la clarté, la stratégie et l'exécution sans excuses.",
+    "p2": "Le coaching n'est pas une thérapie. C'est la guerre. Et je ne travaille qu'avec ceux qui veulent gagner."
+  },
+  "cta": {
+    "title": "PROCHAINE\nÉTAPE.",
+    "subtitle": "Une conversation. Sans engagement. Avec intention.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "button": "Prendre Contact"
+  },
+  "footer": {
+    "copyright": "© Helder Brito",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  }
+}

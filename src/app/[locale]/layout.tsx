@@ -1,20 +1,62 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { locales } from '../../../i18n';
+import '../globals.css';
 
-export const metadata: Metadata = {
-  title: "Helder Brito — Coach. Estrategista. Transformação Real.",
-  description: "A maioria das pessoas sabe o que quer. Poucos sabem como chegar lá.",
-};
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
-export default function RootLayout({
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    pt: 'Helder Brito — Coach. Estrategista. Transformação Real.',
+    en: 'Helder Brito — Coach. Strategist. Real Transformation.',
+    fr: 'Helder Brito — Coach. Stratège. Transformation Réelle.',
+    it: 'Helder Brito — Coach. Strategista. Trasformazione Reale.',
+    de: 'Helder Brito — Coach. Stratege. Echte Transformation.',
+    ar: 'هيلدر بريتو — مدرب. استراتيجي. تحول حقيقي.',
+  };
+  
+  const descriptions: Record<string, string> = {
+    pt: 'A maioria das pessoas sabe o que quer. Poucos sabem como chegar lá.',
+    en: 'Most people know what they want. Few know how to get there.',
+    fr: 'La plupart des gens savent ce qu\'ils veulent. Peu savent comment y arriver.',
+    it: 'La maggior parte delle persone sa cosa vuole. Pochi sanno come arrivarci.',
+    de: 'Die meisten Menschen wissen, was sie wollen. Wenige wissen, wie sie dorthin kommen.',
+    ar: 'معظم الناس يعرفون ما يريدون. القليل يعرفون كيف يصلون إلى هناك.',
+  };
+  
+  return {
+    title: titles[locale] || titles.pt,
+    description: descriptions[locale] || descriptions.pt,
+  };
+}
+
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  
+  if (!locales.includes(locale as any)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+  const direction = locale === 'ar' ? 'rtl' : 'ltr';
+
   return (
-    <html lang="pt">
+    <html lang={locale} dir={direction}>
       <body>
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         
         {/* Custom cursor */}
         <script

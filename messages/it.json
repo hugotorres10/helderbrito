@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "HELDER\nBRITO.",
+    "subtitle": "Coach. Strategista. Trasformazione reale.",
+    "cta": "Inizia Ora"
+  },
+  "statement": {
+    "quote": "La maggior parte delle persone sa cosa vuole.",
+    "quoteFaded": "Pochi sanno come arrivarci.",
+    "author": "Helder Brito"
+  },
+  "services": {
+    "clarity": {
+      "num": "01",
+      "title": "Chiarezza",
+      "desc": "Eliminiamo il rumore. Definisci chi sei e dove stai andando."
+    },
+    "strategy": {
+      "num": "02",
+      "title": "Strategia",
+      "desc": "Un piano reale, non motivazione vuota."
+    },
+    "execution": {
+      "num": "03",
+      "title": "Esecuzione",
+      "desc": "Follow-up diretto. Risultati misurabili."
+    }
+  },
+  "testimonials": {
+    "title": "Risultati Reali",
+    "items": [
+      {
+        "quote": "Helder ha completamente cambiato il modo in cui vedo la mia attività. In 3 mesi, il fatturato è cresciuto del 180%.",
+        "name": "Ricardo M.",
+        "role": "CEO, Startup Tech"
+      },
+      {
+        "quote": "Finalmente qualcuno che non vende sogni. Strategia chiara, esecuzione reale.",
+        "name": "Ana P.",
+        "role": "Fondatrice, E-commerce"
+      },
+      {
+        "quote": "Il miglior investimento che ho fatto in me stesso. Focus totale, zero chiacchiere.",
+        "name": "João S.",
+        "role": "Freelancer"
+      }
+    ]
+  },
+  "about": {
+    "label": "CHI SONO",
+    "title": "Nato in Portogallo.\nVissuto in 7 paesi.\nTrasformato 200+ vite.",
+    "p1": "Non credo nelle formule magiche. Credo nella chiarezza, nella strategia e nell'esecuzione senza scuse.",
+    "p2": "Il coaching non è terapia. È guerra. E lavoro solo con chi vuole vincere."
+  },
+  "cta": {
+    "title": "PROSSIMO\nPASSO.",
+    "subtitle": "Una conversazione. Senza impegno. Con intenzione.",
+    "namePlaceholder": "Il tuo nome",
+    "emailPlaceholder": "La tua email",
+    "button": "Contattami"
+  },
+  "footer": {
+    "copyright": "© Helder Brito",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  }
+}
