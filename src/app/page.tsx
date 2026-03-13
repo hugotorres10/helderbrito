@@ -24,11 +24,15 @@ export default function Home() {
           style={{ y: heroY, opacity: heroOpacity }}
           className="absolute inset-0"
         >
-          <div className="photo-overlay absolute inset-0">
+          <div className="absolute inset-0 bg-black">
             <img
-              src="/images/helder-brito.jpg"
+              src="/images/helder-profile.jpg"
               alt="Helder Brito"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
+              style={{ 
+                filter: 'brightness(1.1) contrast(1.2)',
+                objectPosition: 'center'
+              }}
             />
           </div>
           
@@ -202,11 +206,14 @@ export default function Home() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="col-span-12 md:col-span-5"
             >
-              <div className="photo-overlay" style={{ clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}>
+              <div className="bg-black" style={{ clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}>
                 <img
-                  src="/images/helder-brito.jpg"
+                  src="/images/helder-profile.jpg"
                   alt="Helder Brito"
                   className="w-full h-auto"
+                  style={{ 
+                    filter: 'brightness(1.1) contrast(1.2)'
+                  }}
                 />
               </div>
             </motion.div>
