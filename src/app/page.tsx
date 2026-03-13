@@ -26,7 +26,7 @@ export default function Home() {
         >
           <div className="photo-overlay absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80&fit=crop"
+              src="/images/helder-brito.jpg"
               alt="Helder Brito"
               className="w-full h-full object-cover"
             />
@@ -204,7 +204,7 @@ export default function Home() {
             >
               <div className="photo-overlay" style={{ clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80&fit=crop"
+                  src="/images/helder-brito.jpg"
                   alt="Helder Brito"
                   className="w-full h-auto"
                 />
