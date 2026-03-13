@@ -1,7 +1,7 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useState, useEffect, useRef } from 'react';
 
 const languages = [
   { code: 'pt', flag: '🇵🇹', name: 'Português' },
@@ -13,29 +13,38 @@ const languages = [
 ];
 
 export default function LanguageSwitcher() {
+  const { locale, setLocale } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLocale = pathname.split('/')[1] || 'pt';
-  const currentLang = languages.find(l => l.code === currentLocale) || languages[0];
+  const currentLang = languages.find(l => l.code === locale) || languages[0];
 
-  const switchLanguage = (locale: string) => {
-    const newPath = `/${locale}`;
-    router.push(newPath);
+  const switchLanguage = (code: string) => {
+    setLocale(code as any);
     setIsOpen(false);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <div className="fixed top-8 right-8 z-50">
+    <div ref={dropdownRef} className="fixed top-6 right-6 z-50 md:top-8 md:right-8">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 bg-[#0A0A0A] border border-white/10 px-4 py-2 hover:border-white/30 transition-colors mono-small"
+        className="flex items-center gap-2 bg-[#0A0A0A]/90 backdrop-blur-sm border border-white/20 px-3 py-2 md:px-4 md:py-2.5 hover:border-white/40 transition-all mono-small rounded-sm"
       >
-        <span className="text-xl">{currentLang.flag}</span>
-        <span className="text-[#F5F5F0]">{currentLang.code.toUpperCase()}</span>
+        <span className="text-lg md:text-xl">{currentLang.flag}</span>
+        <span className="text-[#F5F5F0] text-xs md:text-sm font-medium">{currentLang.code.toUpperCase()}</span>
         <svg
-          className={`w-4 h-4 text-[#F5F5F0] transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-3 h-3 md:w-4 md:h-4 text-[#F5F5F0] transition-transform ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -45,17 +54,17 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-[#0A0A0A] border border-white/10 min-w-[200px]">
+        <div className="absolute top-full right-0 mt-2 bg-[#0A0A0A]/95 backdrop-blur-md border border-white/20 min-w-[180px] md:min-w-[200px] rounded-sm shadow-2xl">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => switchLanguage(lang.code)}
-              className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors mono-small text-left ${
-                lang.code === currentLocale ? 'bg-white/10 text-white' : 'text-[#F5F5F0]/70'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 md:px-4 md:py-3 hover:bg-white/10 transition-colors mono-small text-left first:rounded-t-sm last:rounded-b-sm ${
+                lang.code === locale ? 'bg-white/15 text-white' : 'text-[#F5F5F0]/70'
               }`}
             >
-              <span className="text-xl">{lang.flag}</span>
-              <span>{lang.name}</span>
+              <span className="text-lg md:text-xl">{lang.flag}</span>
+              <span className="text-xs md:text-sm">{lang.name}</span>
             </button>
           ))}
         </div>

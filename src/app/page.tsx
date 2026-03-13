@@ -1,12 +1,12 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useLanguage } from '@/lib/LanguageContext';
 import { useRef } from 'react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Home() {
-  const t = useTranslations();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
