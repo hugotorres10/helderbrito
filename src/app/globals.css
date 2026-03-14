@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,7 +24,7 @@ html {
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.6;
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mono-small {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mono-body {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.8;
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--white);
   background: transparent;
   color: var(--white);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem 0;
   width: 100%;
   color: var(--white);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   transition: border-color 0.3s ease;
   outline: none;
